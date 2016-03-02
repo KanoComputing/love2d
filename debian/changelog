@@ -1,9 +1,7 @@
-love (0.9.1-3) unstable; urgency=medium
+love (0.10.1-1) unstable; urgency=medium
 
-  * Team upload.
-  * Add Breaks+Replaces relation against older versions of love to fix
-    wheezy -> jessie upgrades. (Closes: #768206)
-
+  * Import version 0.10.1
+ 
  -- Vincent Cheng <vcheng@debian.org>  Thu, 13 Nov 2014 23:17:35 -0800
 
 love (0.9.1-2) unstable; urgency=medium
