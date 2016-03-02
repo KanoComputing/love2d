@@ -1,0 +1,60 @@
+Index: love-0.9.1/configure.ac
+===================================================================
+--- love-0.9.1.orig/configure.ac	2014-04-11 17:51:39.368424009 +0200
++++ love-0.9.1/configure.ac	2014-04-11 17:51:39.368424009 +0200
+@@ -134,10 +134,5 @@
+ AC_CONFIG_FILES([
+ 	Makefile
+ 	src/Makefile
+-	platform/unix/debian/control
+-	platform/unix/debian/changelog
+-	platform/unix/debian/rules
+ ])
+ AC_OUTPUT
+-
+-chmod 755 platform/unix/debian/rules
+Index: love-0.9.1/src/Makefile.am
+===================================================================
+--- love-0.9.1.orig/src/Makefile.am	2014-04-11 17:51:39.368424009 +0200
++++ love-0.9.1/src/Makefile.am	2014-04-11 18:01:06.861240099 +0200
+@@ -7,7 +7,9 @@
+ # LÖVE executable
+ bin_PROGRAMS = love
+ #love_LDFLAGS =
+-love_LDADD = liblove.la $(lua_LIBS)
++love_LDADD = .libs/liblove.a $(lua_LIBS) \
++	$(SDL_LIBS) $(freetype2_LIBS) $(lua_LIBS) $(openal_LIBS) $(devil_LIBS) \
++	$(libmodplug_LIBS) $(vorbisfile_LIBS)
+ love_SOURCES = love.cpp
+ 
+ if LOVE_TARGET_OSX
+Index: love-0.9.1/Makefile.am
+===================================================================
+--- love-0.9.1.orig/Makefile.am	2014-04-11 17:51:39.368424009 +0200
++++ love-0.9.1/Makefile.am	2014-04-11 17:51:39.368424009 +0200
+@@ -1,24 +1,8 @@
+ ACLOCAL_AMFLAGS = -I platform/unix/m4
+ SUBDIRS = src
+-EXTRA_DIST = changes.txt license.txt readme.md \
+-	platform/unix/love.desktop.in
+-dist_man1_MANS = platform/unix/love.1
++EXTRA_DIST = changes.txt license.txt readme.md
+ 
+ applicationsdir=$(datarootdir)/applications
+ mimeinfodir=$(datarootdir)/mime/packages
+ pixmapsdir=$(datarootdir)/pixmaps
+ mimeiconsdir=$(datarootdir)/icons/hicolor/scalable/mimetypes
+-
+-applications_DATA = platform/unix/love.desktop
+-dist_mimeinfo_DATA = platform/unix/love.xml
+-dist_pixmaps_DATA = platform/unix/love.svg
+-dist_mimeicons_DATA = platform/unix/application-x-love-game.svg
+-
+-platform/unix/love.desktop: platform/unix/love.desktop.in
+-	$(MKDIR_P) platform/unix
+-	rm -f $@ $@.tmp
+-	$(SED) \
+-		-e "s|@bindir[@]|$(bindir)|" \
+-		${srcdir}/$@.in > $@.tmp
+-	chmod a-w $@.tmp
+-	mv $@.tmp $@

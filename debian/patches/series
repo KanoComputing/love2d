@@ -1,0 +1,5 @@
+scripts_source.patch
+#glee_from_system.patch
+#remove-glee-files.patch
+fix-freetype-includes.patch
+configure.patch

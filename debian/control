@@ -1,0 +1,72 @@
+Source: love
+Section: interpreters
+Priority: optional
+Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
+Uploaders: Miriam Ruiz <miriam@debian.org>
+Build-Depends: debhelper (>= 7), autotools-dev, automake, autoconf, libtool, zip,
+ dh-autoreconf, dh-buildinfo, pkg-config, libboost-dev, libsdl2-dev (>= 2.0.1),
+ libopenal-dev, liblua5.1-0-dev, libphysfs-dev, libdevil-dev, libfreetype6-dev,
+ libmng-dev, libmodplug-dev, libmpg123-dev, libflac-dev, libflac++-dev,
+ libxpm-dev, libxcursor-dev, libxxf86vm-dev, libtiff-dev, libpng-dev,
+ libvorbis-dev, libogg-dev, glee-dev, lua5.2 | lua5.1, 
+ libluajit-5.1-dev [!hurd-i386 !kfreebsd-amd64 !s390x]
+Standards-Version: 3.9.5
+Homepage: http://love2d.org/
+Vcs-Svn: svn://anonscm.debian.org/pkg-games/packages/trunk/love/
+Vcs-Browser: http://anonscm.debian.org/viewvc/pkg-games/packages/trunk/love/
+
+Package: love
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Recommends: binfmt-support
+Description: 2D game development framework based on Lua and OpenGL
+ LÖVE was created to be a user-friendly engine in which simple (or
+ complicated) games could be made without having extensive knowledge
+ of system or graphics functions and without having to dedicate time
+ towards developing the same engine features time and time again.
+ .
+ Developed with cross-platform implementation in mind, it utilizes the
+ latest open source libraries to deliver a similar game experience,
+ independent of operating system. By relying on the Lua scripting language
+ for game-specific programming, it allows even the novice game creator to
+ quickly and efficiently develop an idea into a fully working game.
+
+Package: love-dbg
+Section: debug
+Priority: extra
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, love (= ${binary:Version})
+Description: 2D game development framework - debugging symbols
+ LÖVE was created to be a user-friendly engine in which simple (or
+ complicated) games could be made without having extensive knowledge
+ of system or graphics functions and without having to dedicate time
+ towards developing the same engine features time and time again.
+ .
+ Developed with cross-platform implementation in mind, it utilizes the
+ latest open source libraries to deliver a similar game experience,
+ independent of operating system. By relying on the Lua scripting language
+ for game-specific programming, it allows even the novice game creator to
+ quickly and efficiently develop an idea into a fully working game.
+ .
+ This package includes the debug symbols for LÖVE.
+
+Package: love-doc
+Section: doc
+Architecture: all
+Depends: ${misc:Depends}
+Suggests: love
+Breaks: love (<< 0.9.1-2)
+Replaces: love (<< 0.9.1-2)
+Description: 2D game development framework - documentation
+ LÖVE was created to be a user-friendly engine in which simple (or
+ complicated) games could be made without having extensive knowledge
+ of system or graphics functions and without having to dedicate time
+ towards developing the same engine features time and time again.
+ .
+ Developed with cross-platform implementation in mind, it utilizes the
+ latest open source libraries to deliver a similar game experience,
+ independent of operating system. By relying on the Lua scripting language
+ for game-specific programming, it allows even the novice game creator to
+ quickly and efficiently develop an idea into a fully working game.
+ .
+ This package includes the Reference Manual for LÖVE.

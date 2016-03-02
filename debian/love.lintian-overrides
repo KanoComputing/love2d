@@ -1,0 +1,5 @@
+# LGPL is in the copyright file but does not apply to any of Love
+love binary: copyright-should-refer-to-common-license-file-for-lgpl
+
+# /usr/bin/love is managed by update-alternatives
+love binary: desktop-command-not-in-package

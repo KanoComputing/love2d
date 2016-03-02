@@ -1,0 +1,58 @@
+Description: Replace included GLee with system version
+ Disable use of included GLee, using the system version instead.
+Author: Bas Wijnen <wijnen@debian.org>
+Bug-Debian: http://bugs.debian.org/690492
+Forwarded: no
+Last-Update: 2012-10-14
+
+Index: love-0.9.1/src/Makefile.am
+===================================================================
+--- love-0.9.1.orig/src/Makefile.am	2014-04-11 17:32:52.774840568 +0200
++++ love-0.9.1/src/Makefile.am	2014-04-11 17:34:08.410945278 +0200
+@@ -7,7 +7,7 @@
+ # LÖVE executable
+ bin_PROGRAMS = love
+ #love_LDFLAGS =
+-love_LDADD = liblove.la $(lua_LIBS)
++love_LDADD = liblove.la $(lua_LIBS) -lglee
+ love_SOURCES = love.cpp
+ 
+ if LOVE_TARGET_OSX
+@@ -27,7 +27,7 @@
+ # libLÖVE
+ lib_LTLIBRARIES = liblove.la
+ liblove_la_LDFLAGS = -module -export-dynamic $(LDFLAGS)
+-liblove_la_LIBADD = 	$(SDL_LIBS) $(freetype2_LIBS) $(lua_LIBS)	$(openal_LIBS) $(devil_LIBS) $(libmodplug_LIBS)	$(vorbisfile_LIBS)
++liblove_la_LIBADD = 	$(SDL_LIBS) $(freetype2_LIBS) $(lua_LIBS)	$(openal_LIBS) $(devil_LIBS) $(libmodplug_LIBS)	$(vorbisfile_LIBS) -lglee
+ liblove_la_SOURCES = \
+     ./common/Module.cpp \
+     ./common/runtime.cpp \
+@@ -166,7 +166,6 @@
+     ./modules/graphics/opengl/OpenGL.h \
+     ./modules/graphics/opengl/wrap_Shader.h \
+     ./modules/graphics/opengl/Font.cpp \
+-    ./modules/graphics/opengl/GLee.c \
+     ./modules/graphics/opengl/wrap_SpriteBatch.cpp \
+     ./modules/graphics/opengl/wrap_SpriteBatch.h \
+     ./modules/graphics/opengl/OpenGL.cpp \
+@@ -179,7 +178,6 @@
+     ./modules/graphics/opengl/Canvas.h \
+     ./modules/graphics/opengl/wrap_Image.h \
+     ./modules/graphics/opengl/Graphics.h \
+-    ./modules/graphics/opengl/GLee.h \
+     ./modules/graphics/opengl/wrap_Texture.cpp \
+     ./modules/graphics/opengl/Image.cpp \
+     ./modules/graphics/opengl/Graphics.cpp \
+Index: love-0.9.1/src/modules/graphics/opengl/OpenGL.h
+===================================================================
+--- love-0.9.1.orig/src/modules/graphics/opengl/OpenGL.h	2014-04-11 17:32:52.774840568 +0200
++++ love-0.9.1/src/modules/graphics/opengl/OpenGL.h	2014-04-11 17:32:52.734840505 +0200
+@@ -21,7 +21,7 @@
+ #ifndef LOVE_GRAPHICS_OPENGL_OPENGL_H
+ #define LOVE_GRAPHICS_OPENGL_OPENGL_H
+ 
+-#include "GLee.h"
++#include <GLee.h>
+ 
+ // LOVE
+ #include "graphics/Color.h"

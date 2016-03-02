@@ -1,0 +1,13 @@
+#bin/love usr/games/
+
+debian/pixmaps/*.xpm usr/share/pixmaps/
+debian/pixmaps/*.png usr/share/pixmaps/
+debian/pixmaps/*.svg usr/share/pixmaps/
+
+debian/*.desktop usr/share/applications/
+debian/mimelnk/*.desktop usr/share/mimelnk/application/
+debian/application-registry/*.applications usr/share/application-registry/
+debian/mime-info/*.mime usr/share/mime-info/
+debian/mime-info/*.keys usr/share/mime-info/
+
+debian/tmp/usr/bin/* usr/bin/

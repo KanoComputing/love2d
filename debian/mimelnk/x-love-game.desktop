@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=MimeType
+Exec=love %f
+Name=Löve Game
+Name[es]=Juego de Löve
+Icon=love-game
+Comment=Run Löve Game
+Comment[es]=Ejecutar juego de Löve
+MimeType=application/x-love-game;
+Patterns=*.love;
