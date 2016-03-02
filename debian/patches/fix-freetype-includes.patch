@@ -2,12 +2,10 @@ Description: Fix build failure with freetype 2.5.1
 Author: Juhani Numminen <juhaninumminen0@gmail.com>
 Bug-Debian: http://bugs.debian.org/733357
 
-Index: love-0.9.1/src/modules/font/freetype/Font.h
-===================================================================
---- love-0.9.1.orig/src/modules/font/freetype/Font.h	2014-04-11 17:46:04.143947394 +0200
-+++ love-0.9.1/src/modules/font/freetype/Font.h	2014-04-11 17:46:04.143947394 +0200
-@@ -32,6 +32,8 @@
- #endif
+--- a/src/modules/font/freetype/Font.h
++++ b/src/modules/font/freetype/Font.h
+@@ -28,6 +28,8 @@
+ #include <ft2build.h>
  #include FT_FREETYPE_H
  #include FT_GLYPH_H
 +#include FT_OUTLINE_H
@@ -15,10 +13,8 @@ Index: love-0.9.1/src/modules/font/freetype/Font.h
  
  namespace love
  {
-Index: love-0.9.1/src/modules/font/freetype/TrueTypeRasterizer.h
-===================================================================
---- love-0.9.1.orig/src/modules/font/freetype/TrueTypeRasterizer.h	2014-04-11 17:46:04.143947394 +0200
-+++ love-0.9.1/src/modules/font/freetype/TrueTypeRasterizer.h	2014-04-11 17:46:04.143947394 +0200
+--- a/src/modules/font/freetype/TrueTypeRasterizer.h
++++ b/src/modules/font/freetype/TrueTypeRasterizer.h
 @@ -29,6 +29,8 @@
  #include <ft2build.h>
  #include FT_FREETYPE_H
