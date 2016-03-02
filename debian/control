@@ -9,7 +9,7 @@ Build-Depends: debhelper (>= 7), autotools-dev, automake, autoconf, libtool, zip
  libmng-dev, libmodplug-dev, libmpg123-dev, libflac-dev, libflac++-dev,
  libxpm-dev, libxcursor-dev, libxxf86vm-dev, libtiff-dev, libpng-dev,
  libvorbis-dev, libogg-dev, glee-dev, lua5.2 | lua5.1, 
- libluajit-5.1-dev [!hurd-i386 !kfreebsd-amd64 !s390x]
+ libluajit-5.1-dev [!hurd-i386 !kfreebsd-amd64 !s390x], libtheora-dev
 Standards-Version: 3.9.5
 Homepage: http://love2d.org/
 Vcs-Svn: svn://anonscm.debian.org/pkg-games/packages/trunk/love/
