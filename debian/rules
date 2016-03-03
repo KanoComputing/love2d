@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 
-PRG_SUFFIX=0.9
+PRG_SUFFIX=0.10
 
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
