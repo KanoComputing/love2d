@@ -23,7 +23,7 @@ case "$1" in
         update-alternatives --quiet --install \
             /usr/bin/love \
             love \
-            /usr/bin/love-0.9 \
+            /usr/bin/love-0.10 \
            10
         update-alternatives --quiet --install \
             /usr/share/man/man1/love.1.gz \

@@ -24,7 +24,7 @@ case "$1" in
         fi
         update-alternatives --quiet --remove \
             love \
-            /usr/bin/love-0.9
+            /usr/bin/love-0.10
         update-alternatives --quiet --remove \
             love.1.gz \
             /usr/share/man/man1/love-0.10.1.gz
