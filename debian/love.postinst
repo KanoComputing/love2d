@@ -28,7 +28,7 @@ case "$1" in
         update-alternatives --quiet --install \
             /usr/share/man/man1/love.1.gz \
             love.1.gz \
-            /usr/share/man/man1/love-0.9.1.gz \
+            /usr/share/man/man1/love-0.10.1.gz \
            10
         if which update-binfmts >/dev/null; then
           update-binfmts --import love
